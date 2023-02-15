@@ -4,7 +4,7 @@ import List from './components/List';
 import Footer from './components/Footer';
 import './App.css';
 export default class App extends Component {
-
+    // 状态在哪里，操作状态的方法就在哪里
     state = {
         todos: [
             { id: '001', name: '吃饭', done: true },
@@ -25,13 +25,23 @@ export default class App extends Component {
         });
     }
 
+    updateTodos = (id, flag) => {
+        const {todos} = this.state;
+        todos.forEach(todo => {
+            if(todo.id === id) todo.done = flag;
+        });
+        this.setState({
+            todos
+        });
+    }
+
     render() {
         const { todos } = this.state;
         return (
             <div className='todo-container'>
                 <div className='todo-wrap'>
                     <Header addTodos={this.addTodos.bind(this)}/>
-                    <List todos={todos} />
+                    <List todos={todos} updateTodos={this.updateTodos} />
                     <Footer />
                 </div>
             </div>
