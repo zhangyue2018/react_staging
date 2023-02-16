@@ -45,6 +45,21 @@ export default class App extends Component {
         });
     }
 
+    checkAllTodos = (done) => {
+        const {todos} = this.state;
+        const newTodos = todos.map(todo => ({...todo, done}));
+        this.setState({
+            todos: newTodos
+        });
+    }
+
+    deleteDone = () => {
+        const {todos} = this.state;
+        this.setState({
+            todos: todos.filter(todo => !todo.done)
+        });
+    }
+
     render() {
         const { todos } = this.state;
         return (
@@ -52,7 +67,7 @@ export default class App extends Component {
                 <div className='todo-wrap'>
                     <Header addTodos={this.addTodos.bind(this)}/>
                     <List todos={todos} updateTodos={this.updateTodos} deleteTodos={this.deleteTodos} />
-                    <Footer />
+                    <Footer todos={todos} checkAllTodos={this.checkAllTodos} deleteDone={this.deleteDone} />
                 </div>
             </div>
         )
