@@ -7,7 +7,8 @@ export default class List extends Component {
     // 对接收的props进行类型、必要性的限制
     static propTypes = {
         todos: PropTypes.array.isRequired,
-        updateTodos: PropTypes.func.isRequired
+        updateTodos: PropTypes.func.isRequired,
+        deleteTodos: PropTypes.func.isRequired
     }
 
     render() {
