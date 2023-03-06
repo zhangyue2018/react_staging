@@ -1,0 +1,41 @@
+.row {
+    display: flex;
+    width: 70%;
+    margin: auto;
+}
+.row>div {
+    margin-top: 40px;
+}
+.col-xs-offset-2 {
+    font-size: 20px;
+    margin-right: 50px;
+}
+.col-xs-2 {
+    width: 200px;
+}
+.col-xs-6 {
+    flex-grow: 1;
+}
+
+.list-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.list-group .list-group-item {
+    height: 40px;
+    text-decoration-line: none;
+    border: 1px solid #ccc;
+    line-height: 40px;
+    padding: 0 20px;
+    border-radius: 4px;
+    color: #000;
+}
+
+/* .list-group-item:active {
+    background-color: #aaa;
+} */
+.list-group-item:focus {
+    background-color: #aaa;
+}
+
