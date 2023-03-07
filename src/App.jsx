@@ -3,7 +3,7 @@ import { Route, NavLink, Switch } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
 import Header from './components/Header';
-import './App.css';
+// import './App.css';
 import MyNavLink from './components/MyNavLink';
 
 export default class App extends Component {
@@ -20,16 +20,16 @@ export default class App extends Component {
                     <div className='list-group'>
                         {/* <NavLink activeClassName='selected' className='list-group-item' to='/about'>About==</NavLink> */}
                         {/* <NavLink activeClassName='selected' className='list-group-item' to='/home'>Home==</NavLink> */}
-                        <MyNavLink to='/about'>About</MyNavLink>
-                        <MyNavLink to='/home'>Home</MyNavLink>
+                        <MyNavLink to='/zy/about'>About</MyNavLink>
+                        <MyNavLink to='/zy/home'>Home</MyNavLink>
                     </div>
                 </div>
                 <div className='col-xs-6'>
                     <div className='panel'>
                         <div className='panel-body'>
                             <Switch>
-                                <Route path='/about' component={About}/>
-                                <Route path='/home' component={Home}/>
+                                <Route path='/zy/about' component={About}/>
+                                <Route path='/zy/home' component={Home}/>
                             </Switch>
                         </div>
                     </div>
