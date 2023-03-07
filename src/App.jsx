@@ -28,8 +28,8 @@ export default class App extends Component {
                     <div className='panel'>
                         <div className='panel-body'>
                             <Switch>
-                                <Route path='/zy/about' component={About}/>
-                                <Route path='/zy/home' component={Home}/>
+                                <Route exact={true} path='/zy/about' component={About}/>
+                                <Route exact path='/zy/home' component={Home}/>
                             </Switch>
                         </div>
                     </div>
