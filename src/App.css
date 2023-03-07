@@ -35,7 +35,11 @@
 /* .list-group-item:active {
     background-color: #aaa;
 } */
-.list-group-item:focus {
+/* .list-group-item:focus {
     background-color: #aaa;
+} */
+
+.selected {
+    background-color: aquamarine;
 }
 

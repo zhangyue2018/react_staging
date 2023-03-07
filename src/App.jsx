@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Link, Route } from 'react-router-dom';
+import { Route, NavLink } from 'react-router-dom';
 import About from './pages/About';
 import Home from './pages/Home';
 import Header from './components/Header';
 import './App.css';
+import MyNavLink from './components/MyNavLink';
 
 export default class App extends Component {
   render() {
@@ -17,10 +18,10 @@ export default class App extends Component {
             <div className='row'>
                 <div className='col-xs-2 col-xs-offset-2'>
                     <div className='list-group'>
-                        {/* <a className='list-group-item' href="./about.html">About</a>
-                        <a className='list-group-item' href="./home.html">Home</a> */}
-                        <Link className='list-group-item' to='/about'>About==</Link>
-                        <Link className='list-group-item' to='/home'>Home==</Link>
+                        {/* <NavLink activeClassName='selected' className='list-group-item' to='/about'>About==</NavLink> */}
+                        {/* <NavLink activeClassName='selected' className='list-group-item' to='/home'>Home==</NavLink> */}
+                        <MyNavLink to='/about'>About</MyNavLink>
+                        <MyNavLink to='/home'>Home</MyNavLink>
                     </div>
                 </div>
                 <div className='col-xs-6'>
