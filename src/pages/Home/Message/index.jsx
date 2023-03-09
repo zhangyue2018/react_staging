@@ -22,8 +22,10 @@ export default class Message extends Component {
                                 <li key={message.id}>
                                     {/* 向路由组件传递params参数 */}
                                     {/* <Link to={`/home/message/detail/${message.id}/${message.title}/${message.content}`}>{message.title}</Link> */}
-                                    {/**想路由组件传递search参数 */}
-                                    <Link to={`/home/message/detail/?id=${message.id}&title=${message.title}&content=${message.content}`}>{message.title}</Link>
+                                    {/**向路由组件传递search参数 */}
+                                    {/* <Link to={`/home/message/detail/?id=${message.id}&title=${message.title}&content=${message.content}`}>{message.title}</Link> */}
+                                    {/**向路由组件传递search参数 */}
+                                    <Link to={{pathname: '/home/message/detail', state: {id: message.id, title: message.title, content: message.content}}}>{message.title}</Link>
                                 </li>
                             ) 
                         })
@@ -31,7 +33,11 @@ export default class Message extends Component {
                 </ul>
                 {/** 声明接收params参数 */}
                 {/* <Route path='/home/message/detail/:id/:title/:content' component={Detail}/> */}
+
                 {/** search参数不用声明接收，正常注册路由即可 */}
+                {/* <Route path='/home/message/detail' component={Detail}/> */}
+
+                {/** state参数不用声明接收，正常注册路由即可 */}
                 <Route path='/home/message/detail' component={Detail}/>
             </div>
         )
