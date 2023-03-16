@@ -21,5 +21,15 @@ function mapDispatchToProps(dispatch) {
     }
 }
 
+// mapDispatchToProps的一般写法
+// export default connect(mapStateToProps, mapDispatchToProps)(Count);
 
-export default connect(mapStateToProps, mapDispatchToProps)(Count);
+// mapDispatchToProps的简写
+export default connect(
+    mapStateToProps,
+    {
+        increment: createIncrementAction,
+        incrementAsync: createIncrementAsyncAction,
+        decrement: createDecrementAction
+    }
+)(Count);
