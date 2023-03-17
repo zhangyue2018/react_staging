@@ -1,4 +1,4 @@
-import {INCREMENT, DECREMENT} from './constant';
+import {INCREMENT, DECREMENT} from '../constant';
 
 /**
  * 1.该文件用于创建一个为Count组件服务的reducer，reducer的本质就是一个函数
