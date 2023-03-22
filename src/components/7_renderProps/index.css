@@ -1,0 +1,16 @@
+.parent {
+    background-color: antiquewhite;
+    padding: 10px;
+}
+
+.a {
+    background-color: aqua;
+    padding: 10px;
+    height: 300px;
+}
+
+.b {
+    background-color: beige;
+    height: 200px;
+}
+
