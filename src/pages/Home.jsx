@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
-import {Navigate} from 'react-router-dom';
+import {NavLink, Outlet} from 'react-router-dom';
 
 export default function Home() {
-    const [sum, setSum] = useState(0);
     return (
         <div>
-            <h2>我是Home里的内容</h2>
-            {sum === 2 ? <Navigate to="/about" /> : <h4>当前sum的值是:{sum}</h4>}
-            <button onClick={() => setSum(2)}>点我将sum变成2</button>
-        </div>
+                <h3>我是Home里的内容</h3>
+                <div>
+                    <ul className="nav nav-tabs">
+                        <li>
+                            <NavLink className='list-group-item' to="news">News</NavLink>
+                            {/**注释的两总方法也都可以有同样的效果 */}
+                            {/* <NavLink className='list-group-item' to="./news">News</NavLink> */}
+                            {/* <NavLink className='list-group-item' to="/Home/news">News</NavLink> */}
+                        </li>
+                        <li>
+                            <NavLink className='list-group-item' to="messages">Message</NavLink>
+                            {/**注释的两总方法也都可以有同样的效果 */}
+                            {/* <NavLink className='list-group-item' to="./messages">Message</NavLink> */}
+                            {/* <NavLink className='list-group-item' to="/Home/messages">Message</NavLink> */}
+                        </li>
+                    </ul>
+                    <Outlet/>
+                </div>
+            </div>
     )
 }
 

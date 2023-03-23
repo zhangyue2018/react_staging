@@ -1,6 +1,8 @@
 import {Navigate} from 'react-router-dom';
 import About from '../pages/About';
 import Home from '../pages/Home';
+import News from '../pages/News';
+import Message from '../pages/Message';
 const routes = [
     {
         path: '/About',
@@ -11,6 +13,16 @@ const routes = [
         path: '/Home',
         element: <Home/>,
         caseSensitive: true, // 此处设置是生效的
+        children: [
+            {
+                path: 'news',
+                element: <News/>
+            },
+            {
+                path: 'messages',
+                element: <Message/>
+            }
+        ]
     },
     {
         path: '/',
