@@ -10,6 +10,7 @@ export default function Message() {
         { id: '004', title: '消息4', content: '粒粒皆辛苦' },
     ]);
     function showDetail(msg) {
+        // 如果是传params或者search参数，直接拼在第一个参数中
         navigate('detail', {
             replace: false,
             state: {

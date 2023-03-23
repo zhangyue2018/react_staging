@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink, useRoutes } from 'react-router-dom';
 import routes from '../routes';
+import Header from '../components/reactRouter6/Header';
 
 import './index.css';
 
@@ -13,7 +14,7 @@ export default function Demo() {
     }
     return (
         <div>
-            <h3>ReactRouter6</h3>
+            <Header/>
             <div>
                 <NavLink className={computedClassName} to="/About">About</NavLink><br />
                 <NavLink className={computedClassName} to="/Home">Home</NavLink>
