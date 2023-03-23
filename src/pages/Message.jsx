@@ -14,7 +14,7 @@ export default function Message() {
                 {
                     messages.map(msg => {
                         // 路由链接
-                        return <li key={msg.id}><Link to={`detail/${msg.id}/${msg.title}/${msg.content}`}>{msg.title}</Link></li>
+                        return <li key={msg.id}><Link to={`detail?id=${msg.id}&title=${msg.title}&content=${msg.content}`}>{msg.title}</Link></li>
                     })
                 }
             </ul>
