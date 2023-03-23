@@ -3,14 +3,19 @@ import { NavLink, Route, Routes, Navigate } from 'react-router-dom';
 
 import About from './About';
 import Home from './Home';
+import './index.css';
 
 export default function Demo() {
+
+    function computedClassName({isActive}) {
+        return isActive ? 'guigu': ''
+    }
     return (
         <div>
             <h3>ReactRouter6</h3>
             <div>
-                <NavLink to="/About">About</NavLink><br />
-                <NavLink to="/Home">Home</NavLink>
+                <NavLink className={computedClassName} to="/About">About</NavLink><br />
+                <NavLink className={computedClassName} to="/Home">Home</NavLink>
             </div>
             <div>
                 <Routes>
