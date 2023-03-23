@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Demo from './components/8_ErrorBoundary/Parent';
+import Demo from './pages';
 export default class App extends Component {
   render() {
     return (
