@@ -1,13 +1,25 @@
 import React, { useState } from 'react';
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 
 export default function Message() {
+    const navigate = useNavigate();
     const [messages] = useState([
         { id: '001', title: '消息1', content: '锄禾日当午' },
         { id: '002', title: '消息2', content: '汗滴禾下土' },
         { id: '003', title: '消息3', content: '谁知盘中餐' },
         { id: '004', title: '消息4', content: '粒粒皆辛苦' },
     ]);
+    function showDetail(msg) {
+        navigate('detail', {
+            replace: false,
+            state: {
+                id: msg.id,
+                title: msg.title,
+                content: msg.content
+            }
+        });
+    }
+
     return (
         <div>
             <ul>
@@ -24,6 +36,7 @@ export default function Message() {
                                 }}>
                                 {msg.title}
                             </Link>
+                            <button onClick={() => showDetail(msg)}>点我查看详情</button>
                         </li>
                     })
                 }
