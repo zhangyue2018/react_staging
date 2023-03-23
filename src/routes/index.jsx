@@ -3,6 +3,7 @@ import About from '../pages/About';
 import Home from '../pages/Home';
 import News from '../pages/News';
 import Message from '../pages/Message';
+import Detail from '../pages/Detail';
 const routes = [
     {
         path: '/About',
@@ -20,7 +21,13 @@ const routes = [
             },
             {
                 path: 'messages',
-                element: <Message/>
+                element: <Message/>,
+                children: [
+                    {
+                        path: 'detail/:id/:title/:content',
+                        element: <Detail/>
+                    },
+                ]
             }
         ]
     },
