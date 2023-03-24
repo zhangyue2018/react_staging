@@ -1,7 +1,13 @@
 import React, { useState } from 'react';
-import {NavLink, Outlet} from 'react-router-dom';
-
+import {NavLink, Outlet, useOutlet} from 'react-router-dom';
+/**
+ * useOutlet:用来呈现当前组件中渲染的嵌套路由
+ * 如果嵌套路由没有挂载，则result为null
+ * 如果嵌套路由已经挂载，则展示嵌套路由的对象
+ * 
+ */
 export default function Home() {
+    console.log('----useOutlet----', useOutlet());
     return (
         <div>
                 <h3>我是Home里的内容</h3>
