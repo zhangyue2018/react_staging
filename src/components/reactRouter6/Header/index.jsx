@@ -1,8 +1,9 @@
 import React from 'react';
-import {useNavigate} from 'react-router-dom';
+import {useNavigate, useInRouterContext} from 'react-router-dom';
 
 export default function Header() {
     const navigate = useNavigate();
+    console.log('######', useInRouterContext());
     
     function back() {
         navigate(-1);
