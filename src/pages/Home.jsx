@@ -1,13 +1,17 @@
 import React, { useState } from 'react';
-import {NavLink, Outlet, useOutlet} from 'react-router-dom';
+import {NavLink, Outlet, useOutlet, useResolvedPath} from 'react-router-dom';
 /**
  * useOutlet:用来呈现当前组件中渲染的嵌套路由
  * 如果嵌套路由没有挂载，则result为null
  * 如果嵌套路由已经挂载，则展示嵌套路由的对象
  * 
+ * useResolvedPath:作用--给定一个URL值，解析其中的：path、search、hash值。
+ * 
  */
 export default function Home() {
     console.log('----useOutlet----', useOutlet());
+
+    console.log('***', useResolvedPath('/user?name=zy&age=22'));
     return (
         <div>
                 <h3>我是Home里的内容</h3>
